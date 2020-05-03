@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <script  defer src="js/app.js"></script>
+        <title>Крестики-Нолики</title>
+    </head>
+    <body>
+        <div class="wraper">
+            <header>
+                <h2 class="title">Крестики-Нолики</h2>
+            </header>
+            <div class="wraper-start">
+                <div class="starting">ИГРАТЬ</div>
+                <button class="open-information" title="Спроси меня как играть">?</button>
+            </div>
+            <div class="wraper-game">
+                <div class="playing-field">
+                    <div class="item item_top-border item_left-border"></div>
+                    <div class="item item_top-border"></div>
+                    <div class="item item_top-border item_right-border"></div>
+                    <div class="item item_left-border"></div>
+                    <div class="item "></div>
+                    <div class="item item_right-border"></div>
+                    <div class="item item_left-border item_bottom-border"></div>
+                    <div class="item item_bottom-border"></div>
+                    <div class="item item_bottom-border item_right-border"></div>
+                </div>
+                <div class="game-control">
+                    <div class="remote">
+                        <button class="btn btn-replay">Новый раунд</button>
+                        <button class="btn open-history">История игр</button>
+                    </div>
+                    <div class="score">
+                        <h1 class="score__title">Счет<br>X &nbsp;O</h1>
+                        <span class="current-score"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО С ИНФОРМАЦИЕЙ -->
+        <div class="modal information">
+            <button class="btn-close">x</button>
+            <p class="information__text">
+                Добро пожаловать!
+                Чтобы начать игру, нажмите на кнопку "играть". Пользователь ходит за крестик, компьютер - за нолик.
+                Первый ход - Ваш, затем ходы чередуются. Чтобы сходить, нажмите на свободную ячейку в поле. Чтобы сыграть еще один раунд, нажмите на кнопку "новый раунд".
+                Историю сыгранных раундов можно посмотреть, нажав на кнопку "история игр". Чтобы начать новую игру, нажмите на
+                кнопку "новая игра", тогда счет обновится. Хорошей игры!
+            </p> 
+        </div>
+        <div class="modal score-history">
+            <button class="btn-close">x</button>
+            <span class="text-in-empty">У Вас пока нет истории игр, нажмите "играть", чтобы начать.</span>
+            <div class ="score-history__text"></div>
+        </div>
+        <div class="modal win-window">
+            <button class="btn-close">x</button>
+            <p class="win-window__text"></p>
+        </div>
+    </body>
+</html>

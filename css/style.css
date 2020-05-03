@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  outline: none;
+}
+
+body {
+  font-family: Tahoma, "Segoe UI", Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff6ed;
+}
+
+/* Блок wraper */
+.wraper {
+  min-width: 320px;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  /* background-color: lightcoral; */
+}
+
+/* Заголовок */
+.title {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: xx-large;
+}
+
+/* Блок с информацией и кнопкой запуска */
+.wraper-start {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Кнопка запуска */
+.starting {
+  width: 250px;
+  height: 60px;
+  font-size: 35px;
+  font-weight: 550;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 60%;
+}
+
+.starting:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/* Кнопка для открытия инструкции */
+.open-information {
+  margin: 0 5px;
+  border: none;
+  width: 60px;
+  font-size: xx-large;
+  background: none;
+  opacity: 60%;
+}
+
+.open-information:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/* Основной блок с игрой */
+.wraper-game {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+/* Игровой поле */
+.playing-field {
+  background-image: url("../img/background.jpg");
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 15px;
+}
+
+/* Ячейки на поле */
+.item {
+  font-family: cursive;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: rgb(66, 66, 66);
+  border-color: rgb(59, 59, 59);
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+/* ОТРИСОВКА "РЕШЕТКИ" НА ПОЛЕ */
+.item_top-border {
+  border-top: none;
+}
+
+.item_left-border {
+  border-left: none;
+}
+
+.item_bottom-border {
+  border-bottom: none;
+}
+
+.item_right-border {
+  border-right: none;
+}
+
+/* Кнопки для управления игрой и счет */
+.game-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Блок с кнопками управления игрой */
+.remote {
+  display: flex;
+}
+
+/* Общий класс кнопка для кнопок новый раунд и история игр */
+.btn {
+  margin: 5px;
+  width: 195px;
+  height: 35px;
+  font-size: 25px;
+  font-weight: 550;
+  border: none;
+  text-transform: uppercase;
+  opacity: 60%;
+  border-radius: 10px;
+}
+
+/* Кнопка-переиграть */
+.btn-replay {
+  background-color: cadetblue;
+  color: white;
+}
+
+/* Кнопка для выбора хода вторым */
+.open-history {
+  background-color: cadetblue;
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/* Общий класс для модального окна */
+.modal {
+  display: none;
+  margin: 0;
+  position: absolute;
+  max-width: 500px;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+  border-radius: 5px;
+}
+
+/* При открытии модального окна */
+.modal-show {
+  display: flex;
+}
+
+/* Общий класс закрывающих модальные окна кнопок */
+.btn-close {
+  background: none;
+  border: none;
+  text-align: end;
+  font-size: x-large;
+  font-weight: 700;
+  opacity: 60%;
+}
+
+.btn-close:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+/*Счет игры */
+.score {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.score__title {
+  font-family: cursive;
+}
+
+/* Для отображения текущего счета */
+.current-score {
+  font-size: 70px;
+  background-color: tomato;
+}
+
+/* Обертка для записи в истории */
+.history-play-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Модальное окно с историей игр */
+.score-history {
+  min-width: 200px;
+  min-height: 80px;
+  background-color: tomato;
+}
+
+/* Список истории игр */
+.score-history__text {
+  font-size: larger;
+  font-family: cursive;
+  min-width: 200px;
+  min-height: 80px;
+  max-height: 450px;
+  overflow-y: hidden;
+}
+
+/* Модальное окно, сообщающее об окончании игры */
+.win-window {
+  min-width: 200px;
+  height: 220px;
+  flex-direction: column;
+  font-size: x-large;
+  padding: 10px;
+  font-family: cursive;
+  padding: 10px;
+}
+
+/* Текст с инстуркцией к игре */
+.information__text{
+  font-size: 20px;
+  padding: 15px;
+}
